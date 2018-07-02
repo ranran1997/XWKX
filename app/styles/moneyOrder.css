@@ -1,0 +1,53 @@
+.wap-container{
+    font-size: 0.13rem;
+    padding-bottom: 0.6rem;
+}
+.top,.bottom{
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+}
+.top-title,.project-title {
+    padding-top: 0.08rem;
+    height: 0.43rem;
+    line-height: 0.35rem;
+    font-size: 0.15rem;
+    text-align: center;
+    border-bottom: solid 1px #ebebeb;
+}
+.order-info{
+    font-size: 0.15rem;
+    border-bottom: solid 1px #ebebeb;
+}
+.order-info ul{
+    border-bottom: solid 1px #eee;
+}
+.order-info ul li{
+    margin-top: 0.15rem;
+    line-height: 0.15rem;
+    height: 0.15rem;
+}
+.order-info .info-item{
+    width: 0.75rem;
+}
+.sum{
+    height: 0.43rem;
+    line-height: 0.43rem;
+    padding-left: 0.15rem;
+}
+.bottom_bar {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    line-height: 0.43rem;
+    text-align: center;
+    justify-content: flex-end;
+}
+.buy-money{
+    color: #f95b5b;
+}
+.confirm-bar{
+    width: 1.3rem;
+    margin-left: 0.45rem;
+    background-color: #42a3fd;
+    font-size: 0.15rem;
+}

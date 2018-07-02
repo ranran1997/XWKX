@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="apple-touch-fullscreen" content="YES"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+        <title>晓维快修</title>
+
+        <!-- build:css styles/index.css -->
+        <link rel="stylesheet" type="text/css" href="styles/common.css">
+        <link rel="stylesheet" type="text/css" href="styles/repairService.css">
+        <!-- endbuild -->
+
+        <script src="scripts/utils/zepto.js"></script>
+        <script src="scripts/utils/vue.js"></script>
+    </head>
+    <script type="text/javascript">
+        var initData = {
+            Gparam:{
+                repairType: 1,
+            },
+            userList: [
+                {name: '财经资讯001'},
+                {name: 'WYZC100'},
+            ], //幸存名单
+            gameInfoList :[
+                /*-1:'-' 0死亡 1存活*/ //比赛信息
+            ],
+        }
+    </script>
+    <body>
+        <div v-clock class="wap-container" id="container">
+            <section class="top pt10 pr10 pl10 bgfff">
+                <div class="sCode" @click="sweepCode()"></div>
+                <div class="mess-item rowflex">
+                    <img src="./images/icon_bitian@2x.png">
+                    <div class="c666 title-box">
+                        <div>联</div>
+                        <div>系</div>
+                        <div>人</div>
+                    </div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="mess-item rowflex">
+                    <img src="./images/icon_bitian@2x.png">
+                    <div class="c666 title-box">
+                        <div>姓</div>
+                        <div>名</div>
+                    </div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="mess-item rowflex">
+                    <div class="c666 title">设备编号</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="mess-item rowflex">
+                    <div class="c666 title">设备地址</div>
+                    <input type="text" placeholder="请填写"/>
+                </div>
+                <div class="mess-item rowflex">
+                    <div class="c666 title">设备故障</div>
+                    <textarea type="text" placeholder="请填写"></textarea>
+                </div>
+            </section>
+            <section class="bottom mt10 mr10 ml10 pb20 bgfff">
+                <div class="bottom-title">
+                    服务类型
+                </div>
+                <div class="bottom-content">
+                    <div class="repair-type">
+                        <div class="repair-item" v-bind:class="{ typeMark: Gparam.repairType === 1 }" @click="selectType(1)">维修<div class="mark"></div></div>
+                        <div class="repair-item" v-bind:class="{ typeMark: Gparam.repairType === 2 }" @click="selectType(2)">新装<div class="mark"></div></div>
+                        <div class="repair-item" v-bind:class="{ typeMark: Gparam.repairType === 3 }" @click="selectType(3)">巡检<div class="mark"></div></div>
+                        <div class="repair-item" v-bind:class="{ typeMark: Gparam.repairType === 4 }" @click="selectType(4)">查账<div class="mark"></div></div>
+                    </div>
+                    <div class="repair-date">
+                        <div id="addPics">
+                            <div class="picItem" id="addPic">
+                                <form id="picForm">
+                                    <input id="file" class="filePic"  type="file" name="file" accept="image/*">
+                                </form>
+                                <p class="picDesc pt10">拍照报修</p>
+                            </div>
+                        </div>
+
+                        <div id="addVoice">
+                            <div class="voiceItem">
+                                <form>
+                                    <input class="fileVoice" type="file" accept="audio/*;capture=microphone">
+                                </form>
+                                <p class="voiceDesc pt10">语音报修</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <section class="bottom_bar cfff" @click="jumpPage('repairSuccess.html')">
+                提交报修
+            </section>
+        </div>
+
+
+
+    <script src="scripts/common.js"></script>
+    <script src="scripts/utils/xhr.js"></script>
+    <script src="scripts/repairService.js"></script>
+    </body>
+</html>

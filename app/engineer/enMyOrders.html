@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>晓维快修</title>
+
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enMyOrders.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/zepto.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            orderNum: 'YHBN123456',
+            enginerrName: '张三',
+            orderTime: '2018-5-6 15:30',
+            orderSocre: 0, // score=亮几颗星
+            appraise: [1,2,3,4], //对应评价一二三四，4=优，3=良...
+            bar: 1,
+            chuliNew: 2,
+            wanchengNew: 3,
+            pingjiaNew: 0,
+        },
+        orderList: [
+            {
+                id: '1',
+                time: '2018-06-24 14:50',
+                type: 'wancheng',
+                orderNum: 'YHBN123456',
+                enginerrName: '张三',
+                phoneNum: '110',
+                repairContent: '读卡器卡纸严重读卡器卡纸严重读卡器卡纸严重读卡器卡纸严重读卡器卡纸严重',
+                orderStatus: '完成',
+                status: 2,
+            },
+            {
+                id: '2',
+                time: '2018-06-23 14:50',
+                type: 'chuli',
+                orderNum: 'YHBN123456',
+                enginerrName: '张三',
+                phoneNum: '110',
+                repairContent: '读卡器卡纸严重',
+                orderStatus: '处理中',
+                status: 1,
+            },
+            {
+                id: '3',
+                time: '2018-06-22 14:50',
+                type: 'chuli',
+                orderNum: 'YHBN123456',
+                enginerrName: '张三',
+                phoneNum: '110',
+                repairContent: '读卡器卡纸严重',
+                orderStatus: '处理中',
+                status: 1,
+            },
+            {
+                id: '4',
+                time: '2018-06-21 14:50',
+                type: 'wancheng',
+                orderNum: 'YHBN123456',
+                enginerrName: '张三',
+                phoneNum: '110',
+                repairContent: '读卡器卡纸严重',
+                orderStatus: '完成',
+                status: 2,
+            },
+        ], //工单列表
+        querenOrder:[
+
+        ],
+
+        gameInfoList :[
+            /*-1:'-' 0死亡 1存活*/ //比赛信息
+        ],
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="nav bgfff">
+        <ul class="">
+            <li v-bind:class="{markBlue: Gparam.bar===1}" @click="jumpBar(1)">全部</li>
+            <li v-bind:class="{markBlue: Gparam.bar===2}" @click="jumpBar(2)">处理中<i class="markNew" v-if="Gparam.chuliNew > 0">{{Gparam.chuliNew}}</i></li>
+            <li v-bind:class="{markBlue: Gparam.bar===3}" @click="jumpBar(3)">完成<i class="markNew" v-if="Gparam.wanchengNew > 0">{{Gparam.wanchengNew}}</i></li>
+        </ul>
+    </section>
+    <section class="bottom mr10 ml10 pb20">
+        <ul>
+            <li v-for="item in orderList" @click="jumpPage(item.status)">
+                <div class="time">{{item.time}}</div>
+                <div class="order-info">
+                    <ul class="pl20 pb15">
+                        <li class="rowflex">
+                            <div class="info-item c666 ">工单编号</div>
+                            <div>{{item.orderNum}}</div>
+                        </li>
+                        <li class="rowflex">
+                            <div class="info-item c666 letterSpacing">工程师</div>
+                            <div>{{item.enginerrName}}</div>
+                        </li>
+                        <li class="rowflex">
+                            <div class="info-item c666">联系电话</div>
+                            <div>{{item.phoneNum}}</div>
+                        </li>
+                        <li class="rowflex">
+                            <div class="info-item c666 ">报修内容</div>
+                            <div class="repair-content">{{item.repairContent}}</div>
+                        </li>
+                        <li class="rowflex">
+                            <div class="info-item c666">工单状态</div>
+                            <div>{{item.orderStatus}}</div>
+                        </li>
+                        <div class="status">{{item.orderStatus}}</div>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enMyOrders.js"></script>
+</body>
+</html>

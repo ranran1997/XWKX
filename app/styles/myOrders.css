@@ -1,0 +1,87 @@
+.wap-container{
+    font-size: 0.13rem;
+}
+.nav{
+    height: 0.4rem;
+
+}
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+    line-height: 0.4rem;
+    font-size: 0.16rem;
+    text-align: center;
+    color: #666;
+}
+.nav ul li{
+    width: 0.6rem;
+}
+.markBlue{
+    color: #42a3fd !important;
+    border-bottom: solid 0.01rem #42a3fd;
+}
+.markNew {
+    display: inline-block;
+    width: 0.12rem;
+    height: 0.12rem;
+    background-color: #fa4a38;
+    font-size: 0.08rem;
+    border-radius: 0.12rem;
+    line-height: 1;
+    margin-top: -0.04rem;
+    position: relative;
+    top: -0.1rem;
+    color: #fff;
+}
+.order-info{
+    font-size: 0.15rem;
+    background-color: #fff;
+    padding-top: 0.05rem;
+    margin-top: 0.1rem;
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+    position: relative;
+}
+.order-info ul{
+    
+}
+.order-info ul li{
+    margin-top: 0.15rem;
+    line-height: 0.15rem;
+}
+.repair-content{
+    width: 2.5rem;
+    line-height: normal;
+    margin-top: -0.03rem;
+}
+.order-info .info-item{
+    width: 0.75rem;
+}
+.order-info .status{
+    font-size: 0.1rem;
+    width: 0.45rem;
+    height: 0.17rem;
+    line-height: 0.17rem;
+    border-radius: 0.17rem;
+    text-align: center;
+    top: 0.2rem;
+    right: 0.1rem;
+    background-color: #fa4a38;
+    color: #fff;
+    position: absolute;
+}
+.time {
+    background-color: #d3d3d3;
+    display: inline-block;
+    padding: 0 0.08rem;
+    border-radius: 0.04rem;
+    font-size: 0.1rem;
+    color: #fff;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.2rem;
+}
+
+.order-info {
+
+}

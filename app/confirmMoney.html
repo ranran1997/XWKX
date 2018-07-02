@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>晓维快修</title>
+
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/confirmMoney.css">
+    <!-- endbuild -->
+
+    <script src="scripts/utils/zepto.js"></script>
+    <script src="scripts/utils/vue.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            orderNum: 'YHBN123456',
+            equipmentNum: '100016',
+            equipmentName: 'ATM机-H68',
+            enginerrName: '张三',
+            enginerrNum: '18612363201',
+            repairContent: '读卡器卡纸严重',
+            images: [
+                './images/test.jpg',
+                './images/test.jpg',
+                './images/test.jpg',
+                './images/test.jpg',
+            ],
+            vioce:{
+                vio: '1',
+                time: '12',
+                isRead: false,
+            },
+        },
+        serviceList: [
+            {
+                name:'项目一',
+                what: '维修',
+                info: '对设备外观进行维修，检查等工作对设备外观进行维修，检查等工作',
+                time: '3',
+                money: 400,
+            },
+            {
+                name: '项目二',
+                what: '维修',
+                info: '对设备外观进行维修，检查等工作对设备外观进行维修，检查等工作',
+                time: '3',
+                money: 300,
+            },
+        ], //服务项目
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top mt10 mr10 ml10 bgfff">
+        <div class="top-title">
+            报修信息
+        </div>
+        <div class="order-info">
+            <ul class="pl20 pb15">
+                <li class="rowflex">
+                    <div class="info-item c666 letterSpacing">工单号</div>
+                    <div>{{Gparam.orderNum}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">设备编号</div>
+                    <div>{{Gparam.equipmentNum}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">设备类型</div>
+                    <div>{{Gparam.equipmentName}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666 letterSpacing">工程师</div>
+                    <div>{{Gparam.enginerrName}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">联系电话</div>
+                    <div>{{Gparam.enginerrNum}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">报修内容</div>
+                    <div>{{Gparam.repairContent}}</div>
+                </li>
+            </ul>
+            <div class="picAndvioce-box ">
+                <div v-if="Gparam.images.length" class="pics rowflex">
+                    <div v-for="item in Gparam.images" class="picItem" v-bind:style="{backgroundImage: 'url('+item+')'}"></div>
+                </div>
+                <div v-if="Gparam.vioce.vio" class="vioce mt15 mb15 rowflex" @click="readVioce()">
+                    <div class="readVioce">
+                        <img src="./images/icon_xingxing_nol@2x.png"/>
+                        <span>{{Gparam.vioce.time+'"'}}</span>
+                    </div>
+                    <audio class="mp3">
+                        <source src="images/music.mp3" type="audio/mpeg">
+                    </audio>
+                    <div v-if="!Gparam.vioce.isRead"  class="isRead" src="images/icon_bitian@2x.png"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section v-for="(item,index) in serviceList" class="project mt10 mr10 ml10 pb15 bgfff">
+        <div class="project-title">
+            <div>
+                <span class="ml10">{{item.name}}</span>
+                <span class="ml15 blue">{{item.what}}</span>
+            </div>
+            <div class="mark"></div>
+        </div>
+        <ul class="project-content">
+            <li class="rowflex mt15">
+                <div class="ml10 c666">项目描述</div>
+                <div class="ml15 project-info">{{item.info}}</div>
+            </li>
+            <li class="rowflex mt15">
+                <div class="ml10 c666">预计工时</div>
+                <span class="ml15">{{item.time+'小时'}}</span>
+                <div class="c666  project-money">费用</div>
+                <span class="ml15">{{item.money+'元'}}</span>
+            </li>
+        </ul>
+    </section>
+    <section class="ml10 mt10 c999 sum-money">
+        费用总额为700元，已选项目金额300元
+    </section>
+
+    <section class="bottom_bar cfff " >
+        <div class="buy-money">￥300元</div><div class="confirm-bar" @click="jumpPage('moneyOrder.html')">确认</div>
+    </section>
+</div>
+
+
+
+<script src="scripts/common.js"></script>
+<script src="scripts/utils/xhr.js"></script>
+<script src="scripts/confirmMoney.js"></script>
+</body>
+</html>

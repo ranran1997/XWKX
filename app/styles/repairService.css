@@ -1,0 +1,125 @@
+.wap-container{
+    font-size: 0.13rem;
+}
+
+.top{
+    padding-bottom: 0.15rem;
+    box-shadow: 0 0 0.04rem 0 #ebebeb;
+}
+.sCode{
+    position: fixed;
+    z-index: 2;
+    top: 0.25rem;
+    right: 0.05rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: url("../images/icon_saomiao@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.mess-item {
+    margin-top: 0.1rem;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    width: 100%;
+}
+.top .mess-item:last-child {
+    height: 0.6rem;
+}
+.mess-item img {
+    width: 0.07rem;
+    margin-right: 0.03rem;
+}
+.mess-item .title-box {
+    width: 0.52rem;
+    display: flex;
+    justify-content: space-between;
+}
+.mess-item .title {
+    width: 0.52rem;
+    margin-left: 0.1rem;
+}
+input[type="text"] {
+    width: 2.75rem;
+    height: 0.25rem;
+    margin-left: 0.18rem;
+}
+textarea{
+    width: 2.75rem;
+    margin-left: 0.18rem;
+}
+.bottom{
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+}
+.bottom-title {
+    padding-top: 0.08rem;
+    height: 0.43rem;
+    line-height: 0.35rem;
+    font-size: 0.15rem;
+    text-align: center;
+    border-bottom: solid 1px #ebebeb;
+}
+.repair-type {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0.12rem;
+    font-size: 0.15rem;
+}
+.repair-item{
+    display: flex;
+}
+.mark{
+    width: 0.16rem;
+    margin: 0.03rem 0 0 0.05rem;
+    background: url("../images/icon_nol@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.typeMark{
+    color: #42a3fd;
+}
+.typeMark .mark{
+    width: 0.16rem;
+    margin: 0.03rem 0 0 0.05rem;
+    background: url("../images/icon_sel@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.repair-date {
+    padding: 0 0.58rem;
+    margin-top: 0.37rem;
+    display: flex;
+    justify-content: space-between;
+}
+.picItem{
+    background: url("../images/icon_paizhao@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.picItem .filePic{
+    border: 0;
+    outline: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    opacity: 0;
+}
+.voiceItem{
+    background: url("../images/icon_yuyin@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.voiceItem .fileVoice{
+    border: 0;
+    outline: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    opacity: 0;
+}
+.bottom_bar {
+    width: 100%;
+    background: #42a3fd;
+    line-height: 0.43rem;
+    font-size: 0.15rem;
+    text-align: center;
+}

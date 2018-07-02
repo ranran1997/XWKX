@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>晓维快修</title>
+
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/orderAppraise.css">
+    <!-- endbuild -->
+
+    <script src="scripts/utils/zepto.js"></script>
+    <script src="scripts/utils/vue.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            orderNum: 'YHBN123456',
+            enginerrName: '张三',
+            orderTime: '2018-5-6 15:30',
+            orderSocre: 0, // score=亮几颗星
+            appraise: [1,2,3,4], //对应评价一二三四，4=优，3=良...
+        },
+        userList: [
+            {name: '财经资讯001'},
+            {name: 'WYZC100'},
+        ], //幸存名单
+        gameInfoList :[
+            /*-1:'-' 0死亡 1存活*/ //比赛信息
+        ],
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top mt10 mr10 ml10 bgfff">
+        <div class="top-title">
+            服务评价
+        </div>
+        <div class="order-info">
+            <div class="info-left ml20">
+                <ul>
+                    <li class="rowflex">
+                        <div class="info-item c666">工单号</div>
+                        <div>{{Gparam.orderNum}}</div>
+                    </li>
+                    <li class="rowflex">
+                        <div class="info-item c666">工程师</div>
+                        <div>{{Gparam.enginerrName}}</div>
+                    </li>
+                    <li class="rowflex">
+                        <div class="info-item c666">工单号</div>
+                        <div>{{Gparam.orderTime}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-right">
+                <div class="engIcon"><img src="images/icon_saomiao@2x.png"></div>
+            </div>
+        </div>
+        <div class="order-score">
+            <p class="c666">你对本次服务的总体评价</p>
+            <div class="star-box">
+                <div class="star-item" v-bind:class="{light: Gparam.orderSocre > 0}" @click="orderSocre(1)"></div>
+                <div class="star-item" v-bind:class="{light: Gparam.orderSocre > 1}" @click="orderSocre(2)"></div>
+                <div class="star-item" v-bind:class="{light: Gparam.orderSocre > 2}" @click="orderSocre(3)"></div>
+                <div class="star-item" v-bind:class="{light: Gparam.orderSocre > 3}" @click="orderSocre(4)"></div>
+                <div class="star-item" v-bind:class="{light: Gparam.orderSocre > 4}" @click="orderSocre(5)"></div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom mt10 mr10 ml10 pb20 bgfff">
+        <div class="bottom-title">
+            服务反馈
+        </div>
+        <div class="bottom-content">
+            <ul class="appraise-box pl10">
+                <li class="apparise-item">
+                    <div><span>1</span><span class="item-content">您对本公司产品使用的评价</span></div>
+                    <div class="selects">
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[0] === 4 }" @click="selectType(0,4)">优<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[0] === 3 }" @click="selectType(0,3)">良<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[0] === 2 }" @click="selectType(0,2)">中<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[0] === 1 }" @click="selectType(0,1)">差<div class="mark"></div></div>
+                    </div>
+                </li>
+                <li class="apparise-item">
+                    <div><span>2</span><span class="item-content">您对本公司服务人员态度的评价</span></div>
+                    <div class="selects">
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[1] === 4 }" @click="selectType(1,4)">优<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[1] === 3 }" @click="selectType(1,3)">良<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[1] === 2 }" @click="selectType(1,2)">中<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[1] === 1 }" @click="selectType(1,1)">差<div class="mark"></div></div>
+                    </div>
+                </li>
+                <li class="apparise-item">
+                    <div><span>3</span><span class="item-content">您对本公司服务人员技术的评价</span></div>
+                    <div class="selects">
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[2] === 4 }" @click="selectType(2,4)">优<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[2] === 3 }" @click="selectType(2,3)">良<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[2] === 2 }" @click="selectType(2,2)">中<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[2] === 1 }" @click="selectType(2,1)">差<div class="mark"></div></div>
+                    </div>
+                </li>
+                <li class="apparise-item">
+                    <div><span>4</span><span class="item-content">您对本公司服务人员速度的评价</span></div>
+                    <div class="selects">
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[3] === 4 }" @click="selectType(3,4)">优<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[3] === 3 }" @click="selectType(3,3)">良<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[3] === 2 }" @click="selectType(3,2)">中<div class="mark"></div></div>
+                        <div class="select-item" v-bind:class="{ typeMark: Gparam.appraise[3] === 1 }" @click="selectType(3,1)">差<div class="mark"></div></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="bottom-suggest mt15 c666">
+            您的意见和建议<input class="ml15" type="text" placeholder="请填写"/>
+        </div>
+    </section>
+    <section class="bottom_bar cfff" @click="jumpPage('repairSuccess.html')">
+        确认
+    </section>
+</div>
+
+
+
+<script src="scripts/common.js"></script>
+<script src="scripts/utils/xhr.js"></script>
+<script src="scripts/orderAppraise.js"></script>
+</body>
+</html>

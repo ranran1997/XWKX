@@ -1,0 +1,131 @@
+.wap-container{
+    font-size: 0.13rem;
+}
+.top,.bottom{
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+}
+.top-title,.bottom-title {
+    padding-top: 0.08rem;
+    height: 0.43rem;
+    line-height: 0.35rem;
+    font-size: 0.15rem;
+    text-align: center;
+    border-bottom: solid 1px #ebebeb;
+}
+.order-info{
+    font-size: 0.15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px #ebebeb;
+}
+.info-left{
+    padding-bottom: 0.15rem;
+}
+.info-left ul li{
+    margin-top: 0.13rem;
+}
+.info-item{
+    margin-right: 0.15rem;
+}
+.info-right{
+
+}
+.engIcon{
+    width: 0.64rem;
+    height: 0.64rem;
+    border-radius: 100%;
+    margin-right: 0.1rem;
+    overflow: hidden;
+}
+.engIcon img{
+    width: 0.64rem;
+    height: 0.64rem;
+}
+.order-score {
+    margin-top: 0.13rem;
+    text-align: center;
+}
+.star-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.1rem;
+    padding-bottom: 0.15rem;
+}
+.star-box .star-item{
+    width: 0.19rem;
+    height: 0.19rem;
+    background: url("../images/icon_xingxing_nol@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+    margin-right: 0.15rem;
+}
+.star-item:last-child{
+    margin-right: 0;
+}
+.star-box .light.star-item{
+    background-image: url("../images/icon_xingxing_sel@2x.png") !important;
+}
+.bottom-content{
+    font-size: 0.15rem;
+}
+.appraise-box{
+    padding-bottom: 0.15rem;
+    border-bottom: solid 1px #ebebeb;
+}
+ul .apparise-item{
+    margin-top: 0.15rem;
+}
+.item-content{
+    margin-left: 0.15rem;
+}
+.selects{
+    display: flex;
+    font-size: 0.13rem;
+    color: #999;
+    margin-top: 0.1rem;
+    height: 0.16rem;
+    line-height: 0.16rem;
+}
+.select-item{
+    display: flex;
+    margin-left: 0.3rem;
+}
+.select-item:first-child{
+    margin-left: 0.25rem;
+}
+.mark{
+    width: 0.16rem;
+    height: 0.16rem;
+    margin: 0 0 0 0.05rem;
+    background: url("../images/icon_nol@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.typeMark .mark{
+    background: url("../images/icon_sel@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.bottom-suggest{
+    height: 0.25rem;
+    line-height: 0.25rem;
+    font-size: 0.15rem;
+    padding: 0 0.1rem;
+}
+.bottom-suggest input{
+    width: 2.15rem;
+    -webkit-border-radius: 0.02rem;
+    -moz-border-radius: 0.02rem;
+    border-radius: 0.02rem;
+    border: 1px solid #dfdfdf;
+}
+.bottom_bar {
+    width: 100%;
+    background: #42a3fd;
+    line-height: 0.43rem;
+    font-size: 0.15rem;
+    text-align: center;
+}

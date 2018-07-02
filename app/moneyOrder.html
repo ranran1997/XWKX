@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>晓维快修</title>
+
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/moneyOrder.css">
+    <!-- endbuild -->
+
+    <script src="scripts/utils/zepto.js"></script>
+    <script src="scripts/utils/vue.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            sumMoney: 800,
+        },
+        moneyList: [
+            {
+                what: '维修',
+                money: 400,
+            },
+            {
+                what: '保养',
+                money: 400,
+            },
+            {
+                what: '备件更换',
+                money: 400,
+            },
+        ], //收费项目
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top mt10 mr10 ml10 bgfff">
+        <div class="top-title">
+            费用清单
+        </div>
+        <div class="order-info">
+            <ul class="pl15 pb15">
+                <li v-for="item in moneyList" class="rowflex">
+                    <div class="info-item c666">{{item.what}}</div>
+                    <div>{{item.money}}元</div>
+                </li>
+            </ul>
+            <div class="sum c666">合计<span class="ml10 red">{{Gparam.sumMoney}}</span><span class="c999">元</span></div>
+        </div>
+    </section>
+
+    <section class="bottom_bar cfff " >
+        <div class="buy-money">￥{{Gparam.sumMoney}}元</div><div class="confirm-bar" @click="jumpPage('调用微信支付接口')">确认</div>
+    </section>
+</div>
+
+
+
+<script src="scripts/common.js"></script>
+<script src="scripts/utils/xhr.js"></script>
+<script src="scripts/moneyOrder.js"></script>
+</body>
+</html>
