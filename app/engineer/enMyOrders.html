@@ -39,8 +39,8 @@
                 enginerrName: '张三',
                 phoneNum: '110',
                 repairContent: '读卡器卡纸严重读卡器卡纸严重读卡器卡纸严重读卡器卡纸严重读卡器卡纸严重',
-                orderStatus: '完成',
-                status: 2,
+                orderStatus: '接单',
+                status: 0,
             },
             {
                 id: '2',
@@ -89,9 +89,9 @@
 <div v-clock class="wap-container" id="container">
     <section class="nav bgfff">
         <ul class="">
-            <li v-bind:class="{markBlue: Gparam.bar===1}" @click="jumpBar(1)">全部</li>
+            <li v-bind:class="{markBlue: Gparam.bar===1}" @click="jumpBar(1)">待接单</li>
             <li v-bind:class="{markBlue: Gparam.bar===2}" @click="jumpBar(2)">处理中<i class="markNew" v-if="Gparam.chuliNew > 0">{{Gparam.chuliNew}}</i></li>
-            <li v-bind:class="{markBlue: Gparam.bar===3}" @click="jumpBar(3)">完成<i class="markNew" v-if="Gparam.wanchengNew > 0">{{Gparam.wanchengNew}}</i></li>
+            <li v-bind:class="{markBlue: Gparam.bar===3}" @click="jumpBar(3)">已完成<i class="markNew" v-if="Gparam.wanchengNew > 0">{{Gparam.wanchengNew}}</i></li>
         </ul>
     </section>
     <section class="bottom mr10 ml10 pb20">
