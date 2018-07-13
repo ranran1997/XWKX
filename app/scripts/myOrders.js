@@ -1,9 +1,30 @@
 var MyOrders = {}
 
 MyOrders.init = function () {
+
+    if (!localStorage.getItem('userInfo') ){
+        getUserInfo()
+    }
+    var id = localStorage.getItem('userId')
+    var GData = {
+        data: {},
+    }
+    $.extend(true,GData,initData)
     MyOrders.vueItem = new Vue({
         el: '#container',
-        data: initData,
+        data: GData,
+        beforeCreate:function(){
+            var _self=this;
+            jqGet('work/api/workorder?search.fields='+id,{},function (json) {
+                console.log(json)
+                if (json.code === 200){
+                    GData.data = json.data
+                }
+            },function (json) {
+                alertBox(msg)
+            })
+            console.log(_self)
+        },
         methods: {
             jumpBar: function (num){
                 this.Gparam.bar = num

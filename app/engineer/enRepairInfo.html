@@ -1,10 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>晓维快修</title>
 
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enRepairInfo.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/zepto.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            contactName: '张三',
+            phoneNum: '18612363201',
+            address: '客户报修地址',
+            images: [
+                '../images/test.jpg',
+                '../images/test.jpg',
+                '../images/test.jpg',
+                '../images/test.jpg',
+            ],
+            vioce:{
+                vio: '1',
+                time: '12',
+                isRead: false,
+            },
+        },
+        serviceList: [
+            {
+                name: '设备编号',
+                info: '100003'
+            },
+            {
+                name: '设备编号',
+                info: '100003'
+            },
+            {
+                name: '设备编号',
+                info: '100003'
+            },
+            {
+                name: '安装地址',
+                info: '天府新区'
+            },
+            {
+                name: '所属类型',
+                info: '自助设备类'
+            },
+        ], //服务项目
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top mt10 mr10 ml10 bgfff">
+        <div class="top-title">
+            报修信息
+        </div>
+        <div class="order-info">
+            <ul class="pl20 pb15">
+                <li class="rowflex">
+                    <div class="info-item c666 letterSpacing">联系人</div>
+                    <div>{{Gparam.contactName}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">联系电话</div>
+                    <div>{{Gparam.phoneNum}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">客户地址</div>
+                    <div>{{Gparam.address}}</div>
+                </li>
+            </ul>
+            <div class="picAndvioce-box ">
+                <div v-if="Gparam.images.length" class="pics rowflex">
+                    <div v-for="item in Gparam.images" class="picItem" v-bind:style="{backgroundImage: 'url('+item+')'}"></div>
+                </div>
+                <div v-if="Gparam.vioce.vio" class="vioce mt15 mb15 rowflex" @click="readVioce()">
+                    <div class="readVioce">
+                        <img src="../images/icon_xingxing_nol@2x.png"/>
+                        <span>{{Gparam.vioce.time+'"'}}</span>
+                    </div>
+                    <audio class="mp3">
+                        <source src="../images/music.mp3" type="audio/mpeg">
+                    </audio>
+                    <div v-if="!Gparam.vioce.isRead"  class="isRead" src="../images/icon_bitian@2x.png"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bottom mt10 mr10 ml10 pb15 bgfff">
+        <div class="bottom-title">
+            设备信息
+        </div>
+        <ul class="bottom-content">
+            <li v-for="(item,index) in serviceList"><span class="c666">{{item.name}}</span><span class="ml15">{{item.info}}</span></li>
+        </ul>
+    </section>
+
+    <section class="bottom_bar cfff rowflex" @click="jumpPage('orderAppraise.html')">
+        <div class="bottom_bar_left">接单</div><div class="bottom_bar_right">返回</div>
+    </section>
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enRepairInfo.js"></script>
 </body>
 </html>

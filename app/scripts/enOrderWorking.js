@@ -1,7 +1,7 @@
-var EnOrderHandle = {}
+var EnOrderWorking = {}
 
-EnOrderHandle.init = function () {
-    EnOrderHandle.vueItem = new Vue({
+EnOrderWorking.init = function () {
+    EnOrderWorking.vueItem = new Vue({
         el: '#container',
         data: initData,
         methods: {
@@ -35,5 +35,5 @@ EnOrderHandle.init = function () {
 }
 
 $(function(){
-    EnOrderHandle.init()
+    EnOrderWorking.init()
 })

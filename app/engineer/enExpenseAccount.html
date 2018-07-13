@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>费用报销</title>
+
+    <!-- build:cs  s styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enExpenseAccount.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/jquery.min.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+    <script src="../scripts/utils/picTool.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            type: ['车旅费',"餐补",'备件费'],
+        },
+        expenseList: [
+            {
+                pic: [
+                    '../images/test3.jpg',
+                    '../images/test.jpg',
+                    '../images/test2.jpg',
+                    '../images/test.jpg',
+                ]
+            }
+        ],
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section v-for="item in expenseList" class="top mt10 mr10 ml10 pt5 bgfff" >
+        <div class="mess-item rowflex">
+            <div class="c666 title">费用类型</div>
+            <select id="type" type="text" placeholder="请填写">
+                <option v-for="item in Gparam.type">{{item}}</option>
+            </select>
+        </div>
+        <div class="mess-item rowflex">
+            <div class="c666 title">费用金额</div>
+            <input id="money" type="text" placeholder="请填写"/>
+        </div>
+        <div class="mess-item rowflex">
+            <div class="c666 title">费用说明</div>
+            <textarea id="statement" type="text" placeholder="请填写"></textarea>
+        </div>
+        <div class="button-box pt20">
+            <div class="ml10 top-b">
+                <div class="rowflex ">
+                    <span class="c666">上传发票</span>
+                    <div id="addPics" class="ml20">
+                        <div class="picItem" id="addPic">
+                            <form id="picForm">
+                                <input id="file" class="filePic"  type="file" name="file" accept="image/*">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="rowflex pr10">
+                    <span class="blue">保存</span>
+                    <div class="mark"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="add-item blue" @click="addItem()">
+        添加费用
+    </div>
+
+    <section class="bottom_bar cfff" @click="saveWorkPic()">
+        提交申请
+    </section>
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enExpenseAccount.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>晓维快修</title>
+
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="styles/common.css">
+    <link rel="stylesheet" type="text/css" href="styles/myOrders.css">
+    <!-- endbuild -->
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="scripts/utils/vue.js"></script>
+</head>
+<style>
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+</style>
+<body>
+<div v-clock class="wap-container" id="container">
+    <div class="box">
+        <div class="mt20">用户名<input id="name" type="text"/></div>
+        <div class="mt20">密码<input id="password" type="text"/></div>
+        <div class="login mt20">登录</div>
+    </div>
+</div>
+
+<script src="scripts/common.js"></script>
+<script src="scripts/utils/xhr.js"></script>
+<!--<script src="scripts/myOrders.js"></script>-->
+    <script>
+        var Login = {}
+        Login.postSuccess = function(data) {
+            console.log(data)
+        }
+        Login.postError = function(data) {
+            console.log(data)
+        }
+        $(function(){
+            console.log(1)
+            $('.login').on('click',function () {
+                var data = {
+                    loginName: $('#name').val(),
+                    password: $('#password').val()
+                }
+                console.log(data)
+                $.ajax({
+                    type:'post',
+                    url: '/work/api/login',
+                    data:  JSON.stringify(data) ,
+                    dataType: "json",
+                    contentType: 'application/json',
+                    timeout : 15000,
+                    cache : false ,
+                    success: function(json){
+                        console.log()
+                        if (json.code === 200){
+                            var result = json.data
+                            alertBox('登录成功')
+                            jumpPage('repairService.html')
+                        }
+                    },
+                    error:function(d){
+                        console.log(d)
+                    }
+                });
+            })
+        })
+    </script>
+</body>
+</html>

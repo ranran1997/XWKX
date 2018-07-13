@@ -97,31 +97,31 @@
     </section>
     <section class="bottom mr10 ml10 pb20">
         <ul>
-            <li v-for="item in orderList" @click="jumpPage(item.status)">
-                <div class="time">{{item.time}}</div>
+            <li v-for="item in data.rows" @click="jumpPage(item.status)">
+                <div class="time">{{item.createdTime}}</div>
                 <div class="order-info">
                     <ul class="pl20 pb15">
                         <li class="rowflex">
                             <div class="info-item c666 ">工单编号</div>
-                            <div>{{item.orderNum}}</div>
+                            <div>{{item.id}}</div>
                         </li>
                         <li class="rowflex">
                             <div class="info-item c666 letterSpacing">工程师</div>
-                            <div>{{item.enginerrName}}</div>
+                            <div>{{item.engineer}}</div>
                         </li>
                         <li class="rowflex">
                             <div class="info-item c666">联系电话</div>
-                            <div>{{item.phoneNum}}</div>
+                            <div>{{item.linkPhone}}</div>
                         </li>
                         <li class="rowflex">
                             <div class="info-item c666 ">报修内容</div>
-                            <div class="repair-content">{{item.repairContent}}</div>
+                            <div class="repair-content">{{item.engineerWork}}</div>
                         </li>
                         <li class="rowflex">
                             <div class="info-item c666">工单状态</div>
-                            <div>{{item.orderStatus}}</div>
+                            <div>{{item.systemStatus}}</div>
                         </li>
-                        <div class="status">{{item.orderStatus}}</div>
+                        <div class="status">{{item.systemStatus}}</div>
                     </ul>
                 </div>
             </li>

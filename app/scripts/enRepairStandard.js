@@ -1,7 +1,7 @@
-var EnOrderHandle = {}
+var EnRepairStandard = {}
 
-EnOrderHandle.init = function () {
-    EnOrderHandle.vueItem = new Vue({
+EnRepairStandard.init = function () {
+    EnRepairStandard.vueItem = new Vue({
         el: '#container',
         data: initData,
         methods: {
@@ -35,5 +35,5 @@ EnOrderHandle.init = function () {
 }
 
 $(function(){
-    EnOrderHandle.init()
+    EnRepairStandard.init()
 })

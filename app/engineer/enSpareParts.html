@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>备品备件</title>
+
+    <!-- build:cs  s styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enSpareParts.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/jquery.min.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+    <script src="../scripts/utils/picTool.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            type: ['车旅费',"餐补",'备件费'],
+        },
+        spareList: [
+            {
+                id: 'YT2.241.05131',
+                name: '打印机',
+                num: '2',
+                usedNum: 2,
+            }
+        ],
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section v-for="item in spareList" class="top mt10 mr10 ml10 pt5 bgfff" >
+        <div class="space-info">
+            <ul class="pl20 pb15">
+                <li class="rowflex">
+                    <div class="info-item c666 ">物料编码</div>
+                    <div>{{item.id}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">物料名称</div>
+                    <div>{{item.name}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">拥有数量</div>
+                    <div>{{item.num}}个</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666 ">本次使用</div>
+                    <div class="add-sub rowflex">
+                        <div class="sub" v-bind:class="{living: item.usedNum > 1}" @click="changeNum('sub',item)"></div>
+                        <div class="usedNum">{{item.usedNum}}</div>
+                        <div class="add" @click="changeNum('add',item.usedNum)" @click="changeNum('add',item)"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="bottom_bar cfff" @click="saveWorkPic()">
+        确认
+    </section>
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enSpareParts.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>备品备件</title>
+
+    <!-- build:cs  s styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enMySpareCenter.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/jquery.min.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+    <script src="../scripts/utils/picTool.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            type: 1,
+        },
+        goodSpareList: [
+            {
+                id: 'YT2.241.05131',
+                name: '打印机',
+                num: '2',
+            },
+            {
+                id: 'YT2.241.05131',
+                name: '打印机',
+                num: '2',
+            },
+            {
+                id: 'YT2.241.05131',
+                name: '打印机',
+                num: '2',
+            },
+        ],
+        badSpareList: [
+            {
+                id: 'YT2.241.05131',
+                name: '打印机',
+                num: '2',
+                isMark: false,
+            },
+            {
+                id: 'YT2.241.05131',
+                name: '打印机',
+                num: '200',
+                isMark: false,
+            },
+        ],
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top bgfff" >
+        <div v-bind:class="{select: Gparam.type === 1}" @click="chooseBar">好件</div>
+        <div v-bind:class="{select: Gparam.type === 2}" @click="chooseBar">坏件</div>
+    </section>
+
+    <section>
+        <div class="goodSpareList" v-if="Gparam.type === 1">
+            <ul v-for="item in goodSpareList" class="space-info bgfff ml10 mt10 mr10">
+                <li class="rowflex">
+                    <div class="info-item c666 ">物料编码</div>
+                    <div>{{item.id}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">物料名称</div>
+                    <div>{{item.name}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">拥有数量</div>
+                    <div>{{item.num}}个</div>
+                </li>
+            </ul>
+            <div class="apply-btn" @click="applySpace">申请备件</div>
+        </div>
+
+
+        <div class="badSpareList" v-if="Gparam.type === 2">
+            <ul v-for="item in badSpareList" class="space-info bgfff ml10 mt10 mr10" @click="mark(item)" v-bind:class="{marking: item.isMark}">
+                <li class="rowflex">
+                    <div class="info-item c666 ">物料编码</div>
+                    <div>{{item.id}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">物料名称</div>
+                    <div>{{item.name}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">拥有数量</div>
+                    <div>{{item.num}}个</div>
+                </li>
+            </ul>
+            <div class="apply-btn" @click="backSpace">坏件退回</div>
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enMySpareCenter.js"></script>
+</body>
+</html>

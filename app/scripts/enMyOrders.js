@@ -8,11 +8,9 @@ EnMyOrders.init = function () {
             jumpBar: function (num){
                 this.Gparam.bar = num
                 if(num == 2){
-                    this.Gparam.querenNew = 0
+                    this.Gparam.chuliNew = 0
                 } else if(num==3){
-                    this.Gparam.fukuanNew = 0
-                } else if(num==4){
-                    this.Gparam.pingjiaNew = 0
+                    this.Gparam.wanchengNew = 0
                 }
             },
             orderSocre: function (num) {
@@ -22,12 +20,12 @@ EnMyOrders.init = function () {
                 Vue.set(this.Gparam.appraise, a, b)
             },
             jumpPage: function (url) {
-                if (url === 2){
-                    window.location.href = 'confirmMoney.html'
-                } else if(url === 3) {
-                    window.location.href = '微信支付调起'
-                } else if(url === 4) {
-                    window.location.href = 'orderAppraise.html'
+                if (url === 0){
+                    window.location.href = 'enRepairInfo.html'
+                } else if(url === 1) {
+                    window.location.href = 'enOederHandle.html'
+                } else if(url === 2) {
+                    window.location.href = 'enRepairInfo.html'
                 } else {
                     window.location.href = url
                 }

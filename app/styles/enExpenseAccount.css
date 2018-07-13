@@ -1,0 +1,105 @@
+body{
+    font-size: 0.13rem;
+    overflow-x: hidden;
+
+}
+#container{
+    margin-bottom: 1rem;
+}
+.top{
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+}
+.mess-item {
+    margin-top: 0.1rem;
+    line-height: 0.25rem;
+    width: 100%;
+}
+.mess-item img {
+    width: 0.07rem;
+    margin-right: 0.03rem;
+}
+.mess-item .title-box {
+    width: 0.52rem;
+    display: flex;
+    justify-content: space-between;
+}
+.mess-item .title {
+    width: 0.52rem;
+    margin-left: 0.1rem;
+}
+input[type="text"] {
+    width: 2.71rem;
+    height: 0.25rem;
+    margin-left: 0.15rem;
+    border-radius: 0.02rem;
+    border: #dfdfdf 1px solid;
+}
+textarea{
+    width: 2.71rem;
+    margin-left: 0.15rem;
+    border-radius: 0.02rem;
+    border: #dfdfdf 1px solid;
+}
+select{
+    width: 2.71rem;
+    height: 0.25rem;
+    margin-left: 0.15rem;
+    border-radius: 0.02rem;
+    border: #dfdfdf 1px solid;
+}
+.button-box{
+    margin-top: 0.07rem;
+    height: 0.6rem;
+    border-top: solid 1px #ebebeb;
+    line-height: 0.29rem;
+}
+.top-b{
+    display: flex;
+    justify-content: space-between;
+}
+.picItem .filePic{
+    position: relative;
+    outline: 0;
+    width: 0.29rem;
+    height: 0.29rem;
+    opacity: 0;
+    z-index: 2;
+}
+.picItem {
+    background: url('../images2/icon_tianjia@2x.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.mark{
+    width: 0.16rem;
+    height: 0.16rem;
+    margin: 0.06rem 0 0 0.05rem;
+    background: url("../images/icon_nol@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.typeMark .mark{
+    background: url("../images/icon_sel@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.add-item{
+    float: right;
+    height: 0.24rem;
+    line-height: 0.24rem;
+    margin-top: 0.15rem;
+    padding-left: 0.29rem;
+    padding-right: 0.1rem;
+    background: url('../images2/icon_tianjiafeiyong@2x.png') no-repeat;
+    background-size: auto 100%;
+}
+
+.bottom_bar {
+    width: 100%;
+    background: #42a3fd;
+    line-height: 0.43rem;
+    font-size: 0.15rem;
+    text-align: center;
+}

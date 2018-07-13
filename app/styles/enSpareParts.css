@@ -1,0 +1,80 @@
+body{
+    font-size: 0.15rem;
+    overflow-x: hidden;
+}
+#container{
+    margin-bottom: 0.5rem;
+}
+.info-item{
+    margin-right: 0.15rem;
+}
+.space-info li{
+    height: 0.2rem;
+    line-height: 0.2rem;
+    margin-top: 0.1rem;
+}
+.sub{
+    width: 0.20rem;
+    height: 0.20rem;
+    background: url('../images2/icon_jianzui@2x.png') no-repeat;
+    background-size: 100%;
+}
+.living.sub{
+    background: url('../images2/icon_jian@2x.png') no-repeat;
+    background-size: 100%;
+}
+.usedNum{
+    width: 0.44rem;
+    text-align: center;
+}
+.add{
+    width: 0.20rem;
+    height: 0.20rem;
+    background: url('../images2/icon_jia@2x.png') no-repeat;
+    background-size: 100%;
+}
+.picItem .filePic{
+    position: relative;
+    outline: 0;
+    width: 0.29rem;
+    height: 0.29rem;
+    opacity: 0;
+    z-index: 2;
+}
+.picItem {
+    background: url('../images2/icon_tianjia@2x.png') no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+
+.mark{
+    width: 0.16rem;
+    height: 0.16rem;
+    margin: 0.06rem 0 0 0.05rem;
+    background: url("../images/icon_nol@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.typeMark .mark{
+    background: url("../images/icon_sel@2x.png") no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 100%;
+}
+.add-item{
+    float: right;
+    height: 0.24rem;
+    line-height: 0.24rem;
+    margin-top: 0.15rem;
+    padding-left: 0.29rem;
+    padding-right: 0.1rem;
+    background: url('../images2/icon_tianjiafeiyong@2x.png') no-repeat;
+    background-size: auto 100%;
+}
+
+.bottom_bar {
+    width: 100%;
+    background: #42a3fd;
+    line-height: 0.43rem;
+    font-size: 0.15rem;
+    text-align: center;
+}

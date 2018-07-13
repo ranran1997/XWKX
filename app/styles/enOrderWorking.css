@@ -1,0 +1,73 @@
+.wap-container{
+    font-size: 0.15rem;
+    box-sizing: border-box;
+}
+.top{
+    font-size: 0.1rem;
+    margin: 0.16rem 0.1rem 0 0.1rem;
+}
+.time{
+    height: 0.16rem;
+    line-height: 0.16rem;
+}
+.time img{
+    height: 0.16rem;
+    width: 0.16rem;
+    vertical-align: bottom;
+}
+
+ul li{
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+    background-color: #fff;
+    margin: 0.07rem 0.1rem 0 0.1rem;
+
+}
+.lit{
+    height: 0.43rem;
+    line-height: 0.43rem;
+    padding-left: 0.1rem;
+    background: url("../images2/icon_zuojian@2x.png") no-repeat right center;
+    background-size: 0.06rem 0.1rem;
+    margin-right: 0.1rem;
+}
+.name{
+    margin-left: 0.17rem;
+}
+.lib{
+    font-size: 0.12rem;
+    height: 0.48rem;
+    line-height: 0.48rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px #ebebeb;
+    padding-left: 0.37rem;
+    padding-right: 0.1rem;
+}
+.lib img{
+    width: 0.19rem;
+    height: 0.17rem;
+    vertical-align: sub;
+}
+.pic{
+
+}
+.down-btn{
+    width: 0.55rem;
+    height: 0.25rem;
+    line-height: 0.25rem;
+    text-align: center;
+    color: #fff;
+    background-color: #42a3fd;
+    -webkit-border-radius: 0.02rem;
+    -moz-border-radius: 0.02rem;
+    border-radius: 0.02rem;
+}
+.bottom_bar {
+    width: 100%;
+    background: #42a3fd;
+    line-height: 0.43rem;
+    font-size: 0.15rem;
+    text-align: center;
+}

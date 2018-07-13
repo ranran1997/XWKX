@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>处理过程之工程师上传处理证明</title>
+
+    <!-- build:cs  s styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enWorkPic.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/jquery.min.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+    <script src="../scripts/utils/picTool.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            orderNum: 'YHBN123456',
+            enginerrName: '张三',
+            orderTime: '2018-5-6 15:30',
+            orderSocre: 0, // score=亮几颗星
+            appraise: [1,2,3,4], //对应评价一二三四，4=优，3=良...
+            bar: 1,
+            chuliNew: 2,
+            wanchengNew: 3,
+            pingjiaNew: 0,
+        },
+        itemInfo: {
+            name: '项目名称',
+            des: '维修描述',
+            standardTime: '8分钟',
+            standardWork: '参考工作标准',
+            pic: [
+                '../images/test3.jpg',
+                '../images/test.jpg',
+                '../images/test2.jpg',
+                '../images/test.jpg',
+            ]
+        },
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top mt10 mr10 ml10 bgfff">
+        <div class="pics-box" id="picList">
+            <img class="imgs" v-for="item in itemInfo.pic" v-bind:src="item"/>
+        </div>
+        <div id="addPics">
+            <div class="picItem" id="addPic">
+                <form id="picForm">
+                    <input id="file" class="filePic"  type="file" name="file" accept="image/*">
+                </form>
+                <p class="picDesc"><img src="../images2/icon_xiaotu@2x.png">{{itemInfo.pic.length}}张</p>
+            </div>
+        </div>
+    </section>
+    <section class="desc rowflex">
+        <div class="c666 mr15">描述</div>
+        <textarea placeholder="请输入"></textarea>
+    </section>
+
+    <section class="bottom_bar cfff" @click="saveWorkPic()">
+        保存
+    </section>
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enWorkPic.js"></script>
+</body>
+</html>

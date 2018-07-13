@@ -13,6 +13,7 @@
             url: urlPath, 
             data:param,
             dataType: "json",
+            contentType: 'application/json',
             timeout : 15000,
             cache : false ,
             async: async,
@@ -43,6 +44,7 @@
             url: urlPath, 
             data:param,
             dataType: "json",
+            contentType: 'application/json',
             timeout : 15000,
             cache : false ,
             success: function(d){
@@ -68,6 +70,7 @@
             url: urlPath, 
             data:param,
             dataType: "jsonp",
+            contentType: 'application/json',
             timeout : 15000,
             cache : false ,
             jsonpCallback:callbackName,

@@ -21,7 +21,7 @@
     border-bottom: solid 0.01rem #42a3fd;
 }
 .markNew {
-    display: inline-block;
+    display: block;
     width: 0.12rem;
     height: 0.12rem;
     background-color: #fa4a38;
@@ -29,8 +29,9 @@
     border-radius: 0.12rem;
     line-height: 1;
     margin-top: -0.04rem;
-    position: relative;
-    top: -0.1rem;
+    margin-left: 0.55rem;
+    position: absolute;
+    top: 0.1rem;
     color: #fff;
 }
 .order-info{

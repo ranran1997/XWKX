@@ -1,0 +1,39 @@
+.wap-container{
+    font-size: 0.15rem;
+    box-sizing: border-box;
+}
+.top{
+    font-size: 0.1rem;
+    margin: 0.16rem 0.1rem 0 0.1rem;
+}
+.standard-info{
+    font-size: 0.15rem;
+    border-bottom: solid 1px #ebebeb;
+}
+.standard-info ul{
+    border-bottom: solid 1px #eee;
+    padding-top: 0.01rem;
+}
+.standard-info ul li{
+    margin-top: 0.1rem;
+}
+.standard-info .info-item{
+    width: 1rem;
+}
+.pic-box{
+    width: 70%;
+}
+.pics{
+    overflow-x: auto;
+}
+.picItem{
+    width: 1.3rem;
+    height: 0.85rem;
+    margin-right: 0.05rem;
+    margin-top: 0.04rem;
+    -webkit-border-radius: 0.025rem;
+    -moz-border-radius: 0.025rem;
+    border-radius: 0.025rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+}

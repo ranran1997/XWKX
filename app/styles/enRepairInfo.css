@@ -1,0 +1,95 @@
+.wap-container{
+    font-size: 0.13rem;
+}
+.top,.bottom{
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+}
+.top-title,.bottom-title {
+    padding-top: 0.08rem;
+    height: 0.43rem;
+    line-height: 0.35rem;
+    font-size: 0.15rem;
+    text-align: center;
+    border-bottom: solid 1px #ebebeb;
+}
+.order-info{
+    font-size: 0.15rem;
+    border-bottom: solid 1px #ebebeb;
+}
+.order-info ul{
+    border-bottom: solid 1px #eee;
+}
+.order-info ul li{
+    margin-top: 0.15rem;
+    line-height: 0.15rem;
+    height: 0.15rem;
+}
+.order-info .info-item{
+    width: 0.75rem;
+}
+.picAndvioce-box{
+    width: 100%;
+    padding-left: 0.1rem;
+}
+.pics{
+    overflow-x: auto;
+    margin-bottom: 0.15rem;
+}
+.picItem{
+    width: 1.3rem;
+    height: 0.85rem;
+    margin-right: 0.05rem;
+    margin-top: 0.15rem;
+    -webkit-border-radius: 0.025rem;
+    -moz-border-radius: 0.025rem;
+    border-radius: 0.025rem;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.readVioce{
+    background-color: #42a3fd;
+    width: 0.9rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    color: #fff;
+    -webkit-border-radius: 0.025rem;
+    -moz-border-radius: 0.025rem;
+    border-radius: 0.025rem;
+}
+.readVioce img{
+    margin-left: 0.1rem;
+    width: 0.3rem;
+    height: 0.3rem;
+}
+.isRead{
+    width: 0.12rem;
+    height: 0.12rem;
+    margin-left: 0.05rem;
+    margin-top: 0.14rem;
+    background-color: #fa4a30;
+    -webkit-border-radius: 0.12rem;
+    -moz-border-radius: 0.12rem;
+    border-radius: 0.12rem;
+}
+.bottom-content li {
+    line-height: 0.15rem;
+    margin-top: 0.15rem;
+    margin-left: 0.1rem;
+    font-size: 0.15rem;
+}
+.bottom_bar {
+    width: 100%;
+    background: #42a3fd;
+    line-height: 0.43rem;
+    font-size: 0.15rem;
+    text-align: center;
+}
+.bottom_bar_left {
+    width: 50%;
+    background-color: #42a3fd;
+}
+.bottom_bar_right {
+    width: 50%;
+    background-color: #df5262;
+}

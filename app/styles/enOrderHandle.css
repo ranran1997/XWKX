@@ -1,0 +1,110 @@
+.wap-container{
+    font-size: 0.13rem;
+}
+.top{
+    font-size: 0.15rem;
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+}
+.tip-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.28rem;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.28rem 0.32rem 0.28rem 0.32rem;
+    height: 0.02rem;
+    background-color: #eee;
+}
+.line i{
+    width: 0.14rem;
+    height: 0.14rem;
+    background-color: #eee;
+    position: relative;
+    display: inline-block;
+    border-radius: 0.14rem;
+    margin-top: -0.07rem;
+}
+.down{
+    background-color: #42a3fd !important;
+}
+.line i.marking{
+    background: url("../images2/icon_daodian@2x.png");
+    background-size: contain;
+    height: 0.18rem;
+    width: 0.18rem;
+    margin-top: -0.08rem;
+}
+.map {
+    border-top: solid 1px #ebebeb;
+    height: 0.51rem;
+    line-height: 0.51rem;
+    padding-left: 0.28rem;
+}
+.map img{
+    margin-left: 0.1rem;
+    width: 0.15rem;
+    height: 0.2rem;
+    margin-top: -0.05rem;
+}
+.order-info{
+    font-size: 0.15rem;
+    background-color: #fff;
+    padding-top: 0.05rem;
+    margin-top: 0.1rem;
+    border-radius: 0.04rem;
+    box-shadow: 0 0.02rem 0.04rem 0 #ebebeb;
+    position: relative;
+}
+.order-info ul{
+
+}
+.order-info ul li{
+    margin-top: 0.15rem;
+    line-height: 0.15rem;
+}
+.repair-content{
+    width: 2.5rem;
+    line-height: normal;
+    margin-top: -0.03rem;
+}
+.order-info .info-item{
+    width: 0.75rem;
+}
+.order-info .status{
+    font-size: 0.1rem;
+    width: 0.45rem;
+    height: 0.17rem;
+    line-height: 0.17rem;
+    border-radius: 0.17rem;
+    text-align: center;
+    top: 0.2rem;
+    right: 0.1rem;
+    background-color: #fa4a38;
+    color: #fff;
+    position: absolute;
+}
+.equipment-info{
+    border-top: solid 0.01rem #ebebeb;
+    padding: 0 0.15rem 0.15rem 0.15rem;
+    font-size: 0.13rem;
+}
+.equipment-info li{
+    display: flex;
+    line-height: 1.8 !important;
+    justify-content: space-between;
+}
+.border{
+    width: 78%;
+    padding-left: 0.05rem;
+    border: solid 0.01rem #ebebeb;
+    -webkit-border-radius: 0.04rem;
+    -moz-border-radius: 0.04rem;
+    border-radius: 0.04rem;
+}
+.order-info {
+
+}
+

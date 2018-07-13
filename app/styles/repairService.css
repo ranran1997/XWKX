@@ -43,10 +43,14 @@ input[type="text"] {
     width: 2.75rem;
     height: 0.25rem;
     margin-left: 0.18rem;
+    border-radius: 0.02rem;
+    border: #dfdfdf 1px solid;
 }
 textarea{
     width: 2.75rem;
     margin-left: 0.18rem;
+    border-radius: 0.02rem;
+    border: #dfdfdf 1px solid;
 }
 .bottom{
     border-radius: 0.04rem;

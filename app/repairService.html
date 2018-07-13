@@ -42,7 +42,7 @@
                         <div>系</div>
                         <div>人</div>
                     </div>
-                    <input type="text" placeholder="请填写"/>
+                    <input id="phone" type="text" placeholder="请填写"/>
                 </div>
                 <div class="mess-item rowflex">
                     <img src="./images/icon_bitian@2x.png">
@@ -50,19 +50,19 @@
                         <div>姓</div>
                         <div>名</div>
                     </div>
-                    <input type="text" placeholder="请填写"/>
+                    <input id="name" type="text" placeholder="请填写"/>
                 </div>
                 <div class="mess-item rowflex">
                     <div class="c666 title">设备编号</div>
-                    <input type="text" placeholder="请填写"/>
+                    <input id="id" type="text" placeholder="请填写"/>
                 </div>
                 <div class="mess-item rowflex">
                     <div class="c666 title">设备地址</div>
-                    <input type="text" placeholder="请填写"/>
+                    <input id="address" type="text" placeholder="请填写"/>
                 </div>
                 <div class="mess-item rowflex">
                     <div class="c666 title">设备故障</div>
-                    <textarea type="text" placeholder="请填写"></textarea>
+                    <textarea id="info" type="text" placeholder="请填写"></textarea>
                 </div>
             </section>
             <section class="bottom mt10 mr10 ml10 pb20 bgfff">
@@ -98,7 +98,7 @@
                 </div>
 
             </section>
-            <section class="bottom_bar cfff" @click="jumpPage('repairSuccess.html')">
+            <section class="bottom_bar cfff" @click="commitRepair()">
                 提交报修
             </section>
         </div>

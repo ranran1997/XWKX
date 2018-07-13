@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>维修标准</title>
+
+    <!-- build:css styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enRepairStandard.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/zepto.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            orderNum: 'YHBN123456',
+            enginerrName: '张三',
+            orderTime: '2018-5-6 15:30',
+            orderSocre: 0, // score=亮几颗星
+            appraise: [1,2,3,4], //对应评价一二三四，4=优，3=良...
+            bar: 1,
+            chuliNew: 2,
+            wanchengNew: 3,
+            pingjiaNew: 0,
+        },
+        itemInfo: {
+            name: '项目名称',
+            des: '维修描述',
+            standardTime: '8分钟',
+            standardWork: '参考工作标准',
+            standardPic: [
+                '../images/test.jpg',
+                '../images/test.jpg',
+                '../images/test.jpg',
+                '../images/test.jpg',
+            ]
+        },
+
+
+
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section class="top mt10 mr10 ml10 bgfff">
+        <div class="standard-info">
+            <ul class="pl10 pb15">
+                <li class="rowflex">
+                    <div class="info-item c666 ">项目名称</div>
+                    <div>{{itemInfo.name}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">描述</div>
+                    <div>{{itemInfo.des}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">标准工作时长</div>
+                    <div>{{itemInfo.standardTime}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666 ">参考工作标准</div>
+                    <div>{{itemInfo.standardWork}}</div>
+                </li>
+                <li class="rowflex">
+                    <div class="info-item c666">参考质量标准</div>
+                    <div class="pic-box">
+                        <div v-if="itemInfo.standardPic.length" class="pics rowflex">
+                            <div v-for="item in itemInfo.standardPic" class="picItem" v-bind:style="{backgroundImage: 'url('+item+')'}"></div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enRepairStandard.js"></script>
+</body>
+</html>

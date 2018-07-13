@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-touch-fullscreen" content="YES"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>费用报销</title>
+
+    <!-- build:cs  s styles/index.css -->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/enApplySpare.css">
+    <!-- endbuild -->
+
+    <script src="../scripts/utils/jquery.min.js"></script>
+    <script src="../scripts/utils/vue.js"></script>
+    <script src="../scripts/utils/picTool.js"></script>
+</head>
+<script type="text/javascript">
+    var initData = {
+        Gparam:{
+            id: ['编码1',"编码2",'编码3'],
+        },
+        expenseList: [
+            {
+                pic: [
+                    '../images/test3.jpg',
+                    '../images/test.jpg',
+                    '../images/test2.jpg',
+                    '../images/test.jpg',
+                ]
+            }
+        ],
+    }
+</script>
+<body>
+<div v-clock class="wap-container" id="container">
+    <section v-for="item in expenseList" class="top mt10 mr10 ml10 pt5 bgfff" >
+        <div class="mess-item rowflex">
+            <div class="c666 title">物料编码</div>
+            <select id="type" type="text" placeholder="请填写">
+                <option v-for="item in Gparam.id">{{item}}</option>
+            </select>
+        </div>
+        <div class="mess-item rowflex">
+            <div class="c666 title">物料名称</div>
+            <input id="money" type="text" placeholder="请填写"/>
+        </div>
+        <div class="mess-item rowflex">
+            <div class="c666 title">申请数量</div>
+            <input id="statement" type="text" onkeyup="value=value.replace(/[^\d]/g,'')" placeholder="请填写"></input>
+        </div>
+    </section>
+    <div class="apply-btn">继续申请</div>
+
+
+    <section class="bottom_bar cfff" @click="saveWorkPic()">
+        确定
+    </section>
+</div>
+
+
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/utils/xhr.js"></script>
+<script src="../scripts/enApplySpare.js"></script>
+</body>
+</html>
